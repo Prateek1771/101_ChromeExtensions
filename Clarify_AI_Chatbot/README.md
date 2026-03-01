@@ -103,20 +103,28 @@ Clarify is a Manifest V3 Chrome extension composed of four independent layers th
 
 ### Load as Unpacked Extension
 
-1. Download or clone this repository to your local machine.
+1. Clone this repository to your local machine:
+   ```bash
+   git clone https://github.com/Prateek1771/101_ChromeExtensions.git
+   ```
 
-2. Open Chrome and navigate to:
+2. Navigate to the extension folder:
+   ```bash
+   cd 101_ChromeExtensions/Clarify_AI_Chatbot
+   ```
+
+3. Open Chrome and navigate to:
    ```
    chrome://extensions
    ```
 
-3. Enable **Developer mode** using the toggle in the top-right corner.
+4. Enable **Developer mode** using the toggle in the top-right corner.
 
-4. Click **Load unpacked**.
+5. Click **Load unpacked**.
 
-5. Select the `summery` folder (the one containing `manifest.json`).
+6. Select the `Clarify_AI_Chatbot` folder (the one containing `manifest.json`).
 
-6. The Clarify extension will appear in your extensions list. Pin it to the toolbar for easy access by clicking the puzzle-piece icon and pinning Clarify.
+7. The Clarify extension will appear in your extensions list. Pin it to the toolbar for easy access by clicking the puzzle-piece icon and pinning Clarify.
 
 ---
 
