@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cloak</h1>
+    <p class="subtitle">Extract design assets from this page</p>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="colors">Colors</button>
+      <button class="tab" data-tab="fonts">Fonts</button>
+      <button class="tab" data-tab="assets">Assets</button>
+    </div>
+
+    <div id="colors" class="panel active">
+      <div id="colors-list" class="list"></div>
+    </div>
+
+    <div id="fonts" class="panel">
+      <div id="fonts-list" class="list"></div>
+    </div>
+
+    <div id="assets" class="panel">
+      <div id="assets-list" class="list"></div>
+    </div>
+
+    <div id="loading" class="loading">Scanning page...</div>
+    <div id="empty" class="empty" hidden>Nothing found.</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

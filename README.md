@@ -11,6 +11,7 @@ A growing collection of Chrome extension projects — each one self-contained, w
 | # | Extension | Description |
 |---|-----------|-------------|
 | 1 | [Clarify](./Clarify_AI_Chatbot) | Chat with any webpage using AI. Ask questions, get summaries, and extract key points — powered by LLaMA 3.3 70B via Groq. |
+| 2 | [Cloak](./Cloak) | Extract colors, fonts, and images from any website with a single click — zero dependencies, pure vanilla JS. |
 
 > More extensions coming soon — stay tuned!
 
