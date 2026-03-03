@@ -12,6 +12,7 @@ A growing collection of Chrome extension projects — each one self-contained, w
 |---|-----------|-------------|
 | 1 | [Clarify](./Clarify_AI_Chatbot) | Chat with any webpage using AI. Ask questions, get summaries, and extract key points — powered by LLaMA 3.3 70B via Groq. |
 | 2 | [Cloak](./Cloak) | Extract colors, fonts, and images from any website with a single click — zero dependencies, pure vanilla JS. |
+| 3 | [Dark Mode](./dark-mode) | Toggle dark mode on any website instantly — no page reload, persistent preference, and code-block-aware styling. |
 
 > More extensions coming soon — stay tuned!
 
