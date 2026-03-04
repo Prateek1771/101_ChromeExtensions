@@ -26,7 +26,7 @@ A growing collection of Chrome extension projects — each one self-contained, w
 git clone https://github.com/Prateek1771/101_ChromeExtensions.git
 
 # Navigate into any extension folder
-cd 101_ChromeExtensions/Clarify_AI_Chatbot
+cd 101_ChromeExtensions/<Project>
 ```
 
 Then load it into Chrome:
