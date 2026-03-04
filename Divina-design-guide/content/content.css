@@ -1,0 +1,125 @@
+/* Styles injected into Shadow DOM */
+
+:host {
+  all: initial;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2147483647;
+}
+
+.gr-overlay-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.gr-overlay-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gr-overlay-content svg,
+.gr-overlay-content img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* AI Guide Lines */
+.gr-ai-guide {
+  position: fixed;
+  pointer-events: none;
+}
+
+.gr-ai-guide-h {
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00ffff, #ff00ff, transparent);
+  opacity: 0.5;
+}
+
+.gr-ai-guide-v {
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, #00ffff, #ff00ff, transparent);
+  opacity: 0.5;
+}
+
+.gr-ai-guide-rect {
+  border: 1px dashed #00ffff;
+  opacity: 0.4;
+}
+
+/* AI Analysis Panel */
+.gr-ai-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 280px;
+  background: rgba(26, 26, 46, 0.95);
+  border: 1px solid rgba(218, 165, 32, 0.5);
+  border-radius: 10px;
+  padding: 14px;
+  color: #e0d8c8;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 12px;
+  pointer-events: auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.gr-ai-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.gr-ai-panel-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #DAA520;
+}
+
+.gr-ai-panel-close {
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: 1px solid #555;
+  border-radius: 50%;
+  color: #888;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.gr-ai-panel-close:hover {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+.gr-ai-panel-score {
+  font-size: 24px;
+  font-weight: bold;
+  color: #DAA520;
+  font-family: Georgia, serif;
+}
+
+.gr-ai-panel-score span {
+  font-size: 14px;
+  color: #888;
+}

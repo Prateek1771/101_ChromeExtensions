@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">&phi;</div>
+    <h1>Divina</h1>
+  </div>
+
+  <nav class="tab-bar">
+    <button class="tab active" data-tab="overlay">Overlay</button>
+    <button class="tab" data-tab="calculator">Calculator</button>
+    <button class="tab" data-tab="ai">AI Analyzer</button>
+  </nav>
+
+  <!-- Overlay Tab -->
+  <section id="tab-overlay" class="tab-panel active">
+    <div class="control-group">
+      <button id="toggle-overlay" class="btn-primary">Enable Overlay</button>
+    </div>
+
+    <div class="control-group">
+      <label>Mode</label>
+      <select id="overlay-mode">
+        <option value="spiral">Spiral + Boxes</option>
+        <option value="boxes">Boxes Only</option>
+        <option value="thirds">Rule of Thirds</option>
+        <option value="diagonals">Diagonal Grid</option>
+        <option value="center-phi">Center + Phi Lines</option>
+        <option value="custom">Custom PNG</option>
+      </select>
+    </div>
+
+    <div class="control-group" id="custom-png-group" style="display:none">
+      <label>Upload PNG</label>
+      <input type="file" id="custom-png" accept="image/png,image/jpeg,image/webp">
+    </div>
+
+    <div class="control-group">
+      <label>Opacity: <span id="opacity-value">0.5</span></label>
+      <input type="range" id="opacity-slider" min="0" max="1" step="0.05" value="0.5">
+    </div>
+
+    <div class="control-group">
+      <label>Rotation</label>
+      <div class="rotation-btns">
+        <button class="btn-small rotation-btn active" data-deg="0">0&deg;</button>
+        <button class="btn-small rotation-btn" data-deg="90">90&deg;</button>
+        <button class="btn-small rotation-btn" data-deg="180">180&deg;</button>
+        <button class="btn-small rotation-btn" data-deg="270">270&deg;</button>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label>Color</label>
+      <input type="color" id="overlay-color" value="#DAA520">
+    </div>
+
+    <div id="overlay-status" class="status-msg"></div>
+    <p class="hint">Overlay is fixed to the full viewport.</p>
+  </section>
+
+  <!-- Calculator Tab -->
+  <section id="tab-calculator" class="tab-panel">
+    <div class="control-group">
+      <label>Value A</label>
+      <input type="number" id="calc-a" placeholder="e.g. 1618" step="any">
+    </div>
+    <div class="control-group">
+      <label>Value B</label>
+      <input type="number" id="calc-b" placeholder="e.g. 1000" step="any">
+    </div>
+    <button id="calc-btn" class="btn-primary">Check Ratio</button>
+
+    <div id="calc-result" class="result-box" style="display:none">
+      <div id="calc-ratio" class="ratio-display"></div>
+      <div id="calc-verdict"></div>
+      <div id="calc-suggestion"></div>
+    </div>
+  </section>
+
+  <!-- AI Analyzer Tab -->
+  <section id="tab-ai" class="tab-panel">
+    <div class="control-group">
+      <label>Groq API Key</label>
+      <input type="password" id="api-key" placeholder="gsk_...">
+      <button id="save-key" class="btn-small">Save</button>
+    </div>
+
+    <button id="analyze-btn" class="btn-primary">Analyze Page</button>
+
+    <div id="ai-status" class="status-msg"></div>
+
+    <div id="ai-result" class="result-box" style="display:none">
+      <div class="score-display">
+        <span class="score-label">Design Score</span>
+        <span id="ai-score" class="score-value">-</span>
+        <span class="score-suffix">/ 10</span>
+      </div>
+      <div id="ai-subscores" class="subscores" style="display:none">
+        <div class="subscore-row" data-key="goldenRatio">
+          <span class="subscore-label">Golden Ratio</span>
+          <div class="subscore-bar-track"><div class="subscore-bar"></div></div>
+          <span class="subscore-value">-</span>
+        </div>
+        <div class="subscore-row" data-key="typography">
+          <span class="subscore-label">Typography</span>
+          <div class="subscore-bar-track"><div class="subscore-bar"></div></div>
+          <span class="subscore-value">-</span>
+        </div>
+        <div class="subscore-row" data-key="colorContrast">
+          <span class="subscore-label">Color Contrast</span>
+          <div class="subscore-bar-track"><div class="subscore-bar"></div></div>
+          <span class="subscore-value">-</span>
+        </div>
+        <div class="subscore-row" data-key="whitespace">
+          <span class="subscore-label">Whitespace</span>
+          <div class="subscore-bar-track"><div class="subscore-bar"></div></div>
+          <span class="subscore-value">-</span>
+        </div>
+        <div class="subscore-row" data-key="colorDistribution">
+          <span class="subscore-label">Color Distribution</span>
+          <div class="subscore-bar-track"><div class="subscore-bar"></div></div>
+          <span class="subscore-value">-</span>
+        </div>
+        <div class="subscore-row" data-key="visualHierarchy">
+          <span class="subscore-label">Visual Hierarchy</span>
+          <div class="subscore-bar-track"><div class="subscore-bar"></div></div>
+          <span class="subscore-value">-</span>
+        </div>
+        <div class="subscore-row" data-key="spacingConsistency">
+          <span class="subscore-label">Spacing Consistency</span>
+          <div class="subscore-bar-track"><div class="subscore-bar"></div></div>
+          <span class="subscore-value">-</span>
+        </div>
+      </div>
+      <div id="ai-suggestions"></div>
+    </div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
