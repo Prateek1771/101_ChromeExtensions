@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Purchase Validator",
+  "version": "1.0.0",
+  "description": "Avoid impulse purchases with AI-powered validation questions",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "https://*.amazon.com/*",
+    "https://*.amazon.in/*",
+    "https://*.amazon.co.uk/*",
+    "https://*.flipkart.com/*",
+    "https://*.ebay.com/*",
+    "https://*.walmart.com/*",
+    "https://*.aliexpress.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.amazon.com/*",
+        "https://*.amazon.in/*",
+        "https://*.amazon.co.uk/*",
+        "https://*.flipkart.com/*",
+        "https://*.ebay.com/*",
+        "https://*.walmart.com/*",
+        "https://*.aliexpress.com/*"
+      ],
+      "js": [
+        "sites/amazon.js",
+        "sites/flipkart.js",
+        "sites/ebay.js",
+        "sites/walmart.js",
+        "sites/aliexpress.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

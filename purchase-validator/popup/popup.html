@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=380, initial-scale=1.0">
+  <title>Purchase Validator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Purchase Validator</h1>
+    </header>
+
+    <!-- Loading State -->
+    <div id="state-loading" class="state">
+      <div class="spinner"></div>
+      <p>Scanning product page...</p>
+    </div>
+
+    <!-- No Product State -->
+    <div id="state-no-product" class="state hidden">
+      <div class="empty-icon">?</div>
+      <p>No product detected.</p>
+      <p class="hint">Visit a product page on Amazon, Flipkart, eBay, Walmart, or AliExpress.</p>
+    </div>
+
+    <!-- No API Key State -->
+    <div id="state-no-key" class="state hidden">
+      <div class="empty-icon">&#128273;</div>
+      <p>API key not set.</p>
+      <button id="btn-open-options" class="btn btn-primary">Set Groq API Key</button>
+    </div>
+
+    <!-- Product Detected State -->
+    <div id="state-product" class="state hidden">
+      <div class="product-card">
+        <img id="product-img" src="" alt="Product" class="product-img">
+        <div class="product-info">
+          <span id="product-site" class="site-badge"></span>
+          <h2 id="product-title" class="product-title"></h2>
+          <p id="product-price" class="product-price"></p>
+        </div>
+      </div>
+      <button id="btn-validate" class="btn btn-primary">Validate This Purchase</button>
+    </div>
+
+    <!-- Questions State -->
+    <div id="state-questions" class="state hidden">
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <p id="question-counter" class="question-counter">Question 1 of 5</p>
+      <p id="question-text" class="question-text"></p>
+      <div id="mcq-options" class="mcq-options"></div>
+      <textarea id="open-answer" class="open-answer hidden" rows="4" placeholder="Type your honest answer..."></textarea>
+      <button id="btn-next" class="btn btn-primary" disabled>Next</button>
+    </div>
+
+    <!-- Evaluating State -->
+    <div id="state-evaluating" class="state hidden">
+      <div class="spinner"></div>
+      <p>AI is analyzing your answers...</p>
+    </div>
+
+    <!-- Result State -->
+    <div id="state-result" class="state hidden">
+      <div id="verdict-badge" class="verdict-badge"></div>
+      <div class="score-container">
+        <div id="score-ring" class="score-ring">
+          <span id="score-value" class="score-value"></span>
+        </div>
+        <p class="score-label">Need Score</p>
+      </div>
+      <p id="result-reasoning" class="result-reasoning"></p>
+      <div id="result-tips" class="result-tips"></div>
+      <button id="btn-retry" class="btn btn-secondary">Try Again</button>
+    </div>
+
+    <!-- Error State -->
+    <div id="state-error" class="state hidden">
+      <div class="empty-icon">!</div>
+      <p id="error-msg" class="error-msg"></p>
+      <button id="btn-error-retry" class="btn btn-secondary">Retry</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
