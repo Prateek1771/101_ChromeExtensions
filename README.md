@@ -2,7 +2,7 @@
 
 **Exploring and building Chrome extensions, one idea at a time.**
 
-A growing collection of Chrome extension projects — each one self-contained, well-documented, and ready to load into your browser. Whether you're here to learn, tinker, or grab a useful tool, dive in and explore.
+A growing collection of Chrome extension projects — each one self-contained, well-documented, and ready to load into your browser. Whether you're here to learn, tinker, or grab a useful tool, dive in and explore. Y ou guys can also contribute
 
 ---
 
@@ -34,7 +34,7 @@ Then load it into Chrome:
 
 1. Go to `chrome://extensions`
 2. Enable **Developer mode** (top-right toggle)
-3. Click **Load unpacked** and select the extension folder
+3. Click **Load unpacked** and select the extension folder.
 
 Each extension has its own README with detailed setup instructions.
 
