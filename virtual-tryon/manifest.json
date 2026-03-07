@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "AI Virtual Try-On",
+  "version": "1.1.0",
+  "description": "Virtual try-on: auto-extracts clothing from shopping sites. Upload your photo, pick a dress, and see the result.",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": [
+    "https://demo.api4ai.cloud/*",
+    "https://api4ai.cloud/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

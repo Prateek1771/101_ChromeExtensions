@@ -15,6 +15,7 @@ A growing collection of Chrome extension projects — each one self-contained, w
 | 3 | [Dark Mode](./dark-mode) | Toggle dark mode on any website instantly — no page reload, persistent preference, and code-block-aware styling. |
 | 4 | [Divina](./Divina-design-guide) | Analyze any web page against classical design principles — golden ratio overlays, composition grids, a proportion calculator, and AI-powered design scoring. |
 | 5 | [Purchase Validator](./purchase-validator) | Avoid impulse purchases with AI-powered validation questions — works on Amazon, Flipkart, eBay, Walmart, and AliExpress. |
+| 6 | [Virtual Try-On](./virtual-tryon) | Upload your photo and try on clothing from any website using AI-powered virtual try-on — powered by API4AI. |
 
 > More extensions coming soon — stay tuned!
 
