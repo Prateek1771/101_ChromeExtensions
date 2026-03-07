@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 520px;
+  min-height: 400px;
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.header-left .date {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.header-left .time {
+  font-size: 13px;
+  color: #8b949e;
+  margin-top: 2px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.streak {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f0883e;
+}
+
+.streak-icon {
+  font-size: 20px;
+}
+
+.icon-btn {
+  background: none;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #8b949e;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s;
+}
+
+.icon-btn:hover {
+  color: #e6edf3;
+  border-color: #58a6ff;
+  background: #161b22;
+}
+
+/* Heatmap */
+.heatmap-section {
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.heatmap-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.heatmap-months {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.heatmap-month-label {
+  width: 11px;
+  font-size: 9px;
+  color: #8b949e;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.heatmap-row {
+  display: flex;
+  gap: 2px;
+}
+
+.heatmap-day-label {
+  width: 28px;
+  font-size: 9px;
+  color: #8b949e;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.heatmap-cell {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  cursor: default;
+}
+
+.heatmap-cell.future {
+  background: transparent;
+}
+
+.heatmap-cell.no-tasks {
+  background: #161b22;
+}
+
+.heatmap-cell.level-0 {
+  background: #161b22;
+  outline: 1px solid #1e252d;
+}
+
+.heatmap-cell.level-1 {
+  background: #0e4429;
+}
+
+.heatmap-cell.level-2 {
+  background: #006d32;
+}
+
+.heatmap-cell.level-3 {
+  background: #26a641;
+}
+
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+  margin-top: 6px;
+  font-size: 10px;
+  color: #8b949e;
+}
+
+.heatmap-legend .heatmap-cell {
+  width: 11px;
+  height: 11px;
+  cursor: default;
+}
+
+/* Tasks */
+.tasks-section {
+  border-top: 1px solid #21262d;
+  padding-top: 12px;
+}
+
+.tasks-section h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #e6edf3;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  background: #161b22;
+  border: 1px solid #21262d;
+  transition: all 0.15s;
+}
+
+.task-item.done {
+  border-color: #238636;
+  background: #0d1f0d;
+}
+
+.task-item.skipped {
+  border-color: #da3633;
+  background: #1f0d0d;
+}
+
+.task-name {
+  flex: 1;
+  font-size: 13px;
+}
+
+.task-item.done .task-name {
+  text-decoration: line-through;
+  color: #8b949e;
+}
+
+.task-item.skipped .task-name {
+  text-decoration: line-through;
+  color: #8b949e;
+}
+
+.task-actions {
+  display: flex;
+  gap: 6px;
+  margin-left: 10px;
+}
+
+.task-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.15s;
+}
+
+.task-btn.done-btn {
+  color: #3fb950;
+}
+
+.task-btn.done-btn:hover,
+.task-btn.done-btn.active {
+  background: #238636;
+  border-color: #238636;
+  color: #fff;
+}
+
+.task-btn.skip-btn {
+  color: #f85149;
+}
+
+.task-btn.skip-btn:hover,
+.task-btn.skip-btn.active {
+  background: #da3633;
+  border-color: #da3633;
+  color: #fff;
+}
+
+.no-tasks-msg {
+  text-align: center;
+  color: #8b949e;
+  padding: 20px;
+  font-size: 13px;
+}
+
+.no-tasks-msg a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.no-tasks-msg a:hover {
+  text-decoration: underline;
+}

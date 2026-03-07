@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Tasks - Consistency Tracker</title>
+  <link rel="stylesheet" href="manage.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Manage Tasks</h1>
+      <a href="#" id="back-link" class="back-link">Back to tracker</a>
+    </header>
+
+    <section class="add-section">
+      <h2 id="form-title">Add New Task</h2>
+      <form id="task-form">
+        <input type="hidden" id="edit-id" value="">
+        <div class="form-group">
+          <label for="task-name">Task Name</label>
+          <input type="text" id="task-name" placeholder="e.g., Go to gym" required autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Recurring Days</label>
+          <div class="day-picker">
+            <label class="day-chip"><input type="checkbox" value="0"><span>Sun</span></label>
+            <label class="day-chip"><input type="checkbox" value="1"><span>Mon</span></label>
+            <label class="day-chip"><input type="checkbox" value="2"><span>Tue</span></label>
+            <label class="day-chip"><input type="checkbox" value="3"><span>Wed</span></label>
+            <label class="day-chip"><input type="checkbox" value="4"><span>Thu</span></label>
+            <label class="day-chip"><input type="checkbox" value="5"><span>Fri</span></label>
+            <label class="day-chip"><input type="checkbox" value="6"><span>Sat</span></label>
+          </div>
+          <p class="hint">Leave all unchecked for every day.</p>
+        </div>
+        <div class="form-group">
+          <label>Specific Dates</label>
+          <div class="date-picker">
+            <input type="date" id="date-input">
+            <button type="button" class="btn btn-secondary" id="add-date-btn">Add Date</button>
+          </div>
+          <div id="dates-list" class="dates-list"></div>
+          <p class="hint">Optionally assign to specific dates in addition to recurring days.</p>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submit-btn">Add Task</button>
+          <button type="button" class="btn btn-secondary" id="cancel-btn" style="display:none;">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <h2>Your Tasks</h2>
+      <div id="task-list"></div>
+      <div id="empty-msg" class="empty-msg" style="display:none;">No tasks yet. Add one above!</div>
+    </section>
+  </div>
+
+  <script src="storage.js"></script>
+  <script src="manage.js"></script>
+</body>
+</html>

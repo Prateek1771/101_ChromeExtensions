@@ -2,7 +2,7 @@
 
 **Exploring and building Chrome extensions, one idea at a time.**
 
-A growing collection of Chrome extension projects — each one self-contained, well-documented, and ready to load into your browser. Whether you're here to learn, tinker, or grab a useful tool, dive in and explore. Y ou guys can also contribute
+A growing collection of Chrome extension projects — each one self-contained, well-documented, and ready to load into your browser. Whether you're here to learn, tinker, or grab a useful tool, dive in and explore. You guys can also contribute!
 
 ---
 
@@ -16,6 +16,7 @@ A growing collection of Chrome extension projects — each one self-contained, w
 | 4 | [Divina](./Divina-design-guide) | Analyze any web page against classical design principles — golden ratio overlays, composition grids, a proportion calculator, and AI-powered design scoring. |
 | 5 | [Purchase Validator](./purchase-validator) | Avoid impulse purchases with AI-powered validation questions — works on Amazon, Flipkart, eBay, Walmart, and AliExpress. |
 | 6 | [Virtual Try-On](./virtual-tryon) | Upload your photo and try on clothing from any website using AI-powered virtual try-on — powered by API4AI. |
+| 7 | [Consistency Tracker](./consistency) | Track daily habits with a GitHub-style heat map and streak counter — local-only storage, no accounts required. |
 
 > More extensions coming soon — stay tuned!
 
