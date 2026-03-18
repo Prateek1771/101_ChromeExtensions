@@ -17,6 +17,7 @@ A growing collection of Chrome extension projects — each one self-contained, w
 | 5 | [Purchase Validator](./purchase-validator) | Avoid impulse purchases with AI-powered validation questions — works on Amazon, Flipkart, eBay, Walmart, and AliExpress. |
 | 6 | [Virtual Try-On](./virtual-tryon) | Upload your photo and try on clothing from any website using AI-powered virtual try-on — powered by API4AI. |
 | 7 | [Consistency Tracker](./consistency) | Track daily habits with a GitHub-style heat map and streak counter — local-only storage, no accounts required. |
+| 8 | [Website roster](./website_roster) | A simple chrome extension which brutally rosts your works, it may be your linkedin, resume, and even your blog posts. |
 
 > More extensions coming soon — stay tuned!
 

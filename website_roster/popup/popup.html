@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebRoast 🔥</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ── SETTINGS PANEL ── -->
+  <div id="settingsPanel" class="overlay hidden">
+    <div class="overlay-header">
+      <span class="overlay-title">⚙️ Settings</span>
+      <button class="icon-btn" id="closeSettings">✕</button>
+    </div>
+    <div class="setting-group">
+      <label class="setting-label">Groq API Key</label>
+      <div class="input-row">
+        <input type="password" id="apiKeyInput" placeholder="gsk_..." autocomplete="off"/>
+        <button class="btn-fire small" id="saveApiKey">Save</button>
+      </div>
+      <p class="hint">Free key at <a href="https://console.groq.com" target="_blank">console.groq.com</a></p>
+    </div>
+    <div id="apiKeyStatus" class="key-status hidden"></div>
+  </div>
+
+  <!-- ── HISTORY PANEL ── -->
+  <div id="historyPanel" class="overlay hidden">
+    <div class="overlay-header">
+      <span class="overlay-title">📜 Roast History</span>
+      <button class="icon-btn" id="closeHistory">✕</button>
+    </div>
+    <div id="historyList" class="history-list"></div>
+    <button class="btn-ghost" id="clearHistory">🗑 Clear All</button>
+  </div>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="logo">
+      <span class="logo-flame">🔥</span>
+      <span class="logo-text">WebRoast</span>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="historyBtn" title="History">📜</button>
+      <button class="icon-btn" id="settingsBtn" title="Settings">⚙️</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── SETUP STATE (no API key) ── -->
+    <div id="setupState" class="state hidden">
+      <div class="empty-state">
+        <div class="empty-icon">🔑</div>
+        <h2>Add Your API Key</h2>
+        <p>Grab a free Groq API key to start roasting</p>
+        <button class="btn-fire" id="openSettingsBtn">Open Settings</button>
+      </div>
+    </div>
+
+    <!-- ── IDLE STATE ── -->
+    <div id="idleState" class="state">
+      <!-- Site Info -->
+      <div class="site-card" id="siteCard">
+        <img class="site-favicon" id="siteFavicon" src="" alt="">
+        <div class="site-info">
+          <div class="site-title" id="siteTitle">Loading page...</div>
+          <div class="site-url" id="siteUrl"></div>
+        </div>
+        <div class="platform-pill" id="platformPill"></div>
+      </div>
+
+      <!-- Persona Selector -->
+      <div class="section-label">Choose your roaster</div>
+      <div class="persona-grid">
+        <button class="persona-btn active" data-persona="gordon">
+          <span class="persona-emoji">👨‍🍳</span>
+          <span class="persona-name">Gordon Ramsay</span>
+        </button>
+        <button class="persona-btn" data-persona="genz">
+          <span class="persona-emoji">💅</span>
+          <span class="persona-name">Gen Z</span>
+        </button>
+        <button class="persona-btn" data-persona="techbro">
+          <span class="persona-emoji">🚀</span>
+          <span class="persona-name">Tech Bro</span>
+        </button>
+      </div>
+
+      <!-- Roast Button -->
+      <button class="roast-btn" id="roastBtn">
+        <span class="roast-btn-fire">🔥</span>
+        <span>ROAST THIS</span>
+      </button>
+    </div>
+
+    <!-- ── LOADING STATE ── -->
+    <div id="loadingState" class="state hidden">
+      <div class="loader-wrap">
+        <div class="flame-anim">
+          <div class="f1">🔥</div>
+          <div class="f2">🔥</div>
+          <div class="f3">🔥</div>
+        </div>
+        <p class="loader-text" id="loaderText">Taking screenshot…</p>
+        <p class="loader-sub">Preparing the roast…</p>
+      </div>
+    </div>
+
+    <!-- ── RESULT STATE ── -->
+    <div id="resultState" class="state hidden">
+      <!-- Headline -->
+      <div class="roast-headline" id="roastHeadline"></div>
+
+      <!-- Screenshot + site info row -->
+      <div class="result-meta">
+        <img class="result-thumb" id="resultThumb" src="" alt="Screenshot">
+        <div class="result-site">
+          <div class="result-site-name" id="resultSiteName"></div>
+          <div class="result-persona-tag" id="resultPersonaTag"></div>
+        </div>
+      </div>
+
+      <!-- Roast Text -->
+      <div class="roast-body" id="roastBody"></div>
+
+      <!-- Scores -->
+      <div class="scores-wrap">
+        <div class="section-label">📊 Autopsy Report</div>
+        <div class="score-bars" id="scoreBars"></div>
+        <div class="overall-wrap">
+          <div class="ring-wrap">
+            <svg class="ring-svg" viewBox="0 0 100 100">
+              <circle class="ring-track" cx="50" cy="50" r="40"/>
+              <circle class="ring-fill" cx="50" cy="50" r="40" id="ringFill"/>
+            </svg>
+            <div class="ring-number" id="ringNumber">0</div>
+          </div>
+          <div class="ring-label">🔥 Roast Score</div>
+        </div>
+      </div>
+
+      <!-- Verdict -->
+      <div class="verdict-card">
+        <div class="card-label">☠️ Final Verdict</div>
+        <div class="card-text" id="verdictText"></div>
+      </div>
+
+      <!-- Highlight -->
+      <div class="highlight-card">
+        <div class="card-label">💀 Biggest Crime</div>
+        <div class="card-text" id="highlightText"></div>
+      </div>
+
+      <!-- Actions -->
+      <div class="action-row">
+        <button class="btn-ghost small" id="copyBtn">📋 Copy</button>
+        <button class="btn-ghost small" id="cardBtn">🎴 Save Card</button>
+        <button class="btn-fire small" id="roastAgainBtn">🔄 Again</button>
+      </div>
+    </div>
+
+    <!-- ── ERROR STATE ── -->
+    <div id="errorState" class="state hidden">
+      <div class="empty-state">
+        <div class="empty-icon">💀</div>
+        <h2>Roast Failed</h2>
+        <p id="errorMsg"></p>
+        <button class="btn-fire" id="retryBtn">Try Again</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Hidden canvas for card generation -->
+  <canvas id="roastCanvas" style="display:none;"></canvas>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
