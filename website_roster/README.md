@@ -4,6 +4,16 @@
 
 WebRoast is a Chrome extension that captures screenshots of websites and social media profiles, extracts page data, and sends it to an AI for a brutally funny roast — complete with scores, verdicts, and downloadable roast cards.
 
+## Screenshot
+
+![WebRoast Screenshot](assets/webroast-1773855500529.png)
+
+## Demo
+
+<video src="assets/project demo.mp4" controls width="100%"></video>
+
+> *If the video doesn't play above, download it from [`assets/project demo.mp4`](assets/project%20demo.mp4)*
+
 ## Features
 
 - **Multi-persona roasting** — Choose from Gordon Ramsay, Gen Z Critic, or Tech Bro personas, each with a distinct roasting style
